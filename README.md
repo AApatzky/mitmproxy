@@ -43,3 +43,31 @@ As an open source project, mitmproxy welcomes contributions of all forms.
 Also, please feel free to join our developer Slack! However, please note that the primary purpose of our Slack is direct communication between maintainers and contributors. If you have questions where the answer might be valuable to others, please use [GitHub Discussions](https://github.com/mitmproxy/mitmproxy/discussions).
 
 [![Slack Developer Chat](https://shields.mitmproxy.org/badge/slack-mitmproxy-E01563.svg)](http://slack.mitmproxy.org/)
+
+## Build Standalone Binaries
+
+  Verify that these commands work and you are using python 3.9 or greater:
+
+  ```
+  python3 --version
+  python3 -m pip --help
+  python3 -m venv --help
+  ```
+  Clone source and set-up virtual enviornment:
+
+  ```
+  git clone git@github.com:AApatzky/mitmproxy.git
+  cd mitmproxy
+  python3 -m venv venv
+  venv/bin/pip install -e ".[dev]"
+  source venv/bin/activate
+  ```
+
+  Run build script in release directory of repo
+
+  ```
+  cd release
+  python3 build.py standalone-binaries
+  ```
+
+  You will find built binaries in a tarball within the release/dist directory of the repo
